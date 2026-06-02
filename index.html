@@ -11,6 +11,29 @@
   <!-- Navbar will be injected here by app.js -->
   <div id="navbar-container"></div>
 
+  <!-- WELCOME OVERLAY -->
+  <div id="welcomeOverlay" class="welcome-overlay">
+    <div class="welcome-card card-glass fade-in-up">
+      <div class="brand-icon text-5xl mb-md">⚡</div>
+      <h2 class="text-3xl mb-xs">Chào mừng đến với SanTime</h2>
+      <p class="text-secondary mb-xl">Vui lòng chọn vai trò của bạn để tiếp tục</p>
+      
+      <div class="grid-2 gap-md">
+        <button class="role-btn btn btn-outline" onclick="selectRole('player')">
+          <span class="text-3xl mb-sm block">🏃</span>
+          <span class="font-bold text-lg block">Người chơi</span>
+          <span class="text-xs text-tertiary font-normal">Đặt sân, tìm đội</span>
+        </button>
+        
+        <button class="role-btn btn btn-outline" onclick="selectRole('owner')">
+          <span class="text-3xl mb-sm block">🏟️</span>
+          <span class="font-bold text-lg block">Chủ sân</span>
+          <span class="text-xs text-tertiary font-normal">Quản lý đặt sân</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- HERO SECTION -->
   <header class="hero section relative overflow-hidden">
     <!-- Decorative background elements -->

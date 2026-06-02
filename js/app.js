@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initCounterAnimations();
   initChatWidget();
+  initRoleSelection();
+  initAdminButton();
 });
 
 // ---- Navbar Scroll Effect ----
@@ -242,6 +244,12 @@ function debounce(fn, delay = 300) {
 
 // ---- Generate Navbar HTML ----
 function getNavbarHTML(basePath = '') {
+  const role = localStorage.getItem('santime_role') || 'player';
+  let dashboardLink = `<a href="${basePath}pages/dashboard.html">Dashboard</a>`;
+  if (role === 'owner') {
+    dashboardLink = `<a href="${basePath}pages/owner.html" class="text-primary font-bold">Quản lý sân</a>`;
+  }
+
   return `
   <nav class="navbar" id="navbar">
     <div class="container">
@@ -254,7 +262,7 @@ function getNavbarHTML(basePath = '') {
         <a href="${basePath}pages/courts.html">Tìm sân</a>
         <a href="${basePath}pages/matchmaking.html">Ghép đội</a>
         <a href="${basePath}pages/booking.html">Đặt sân</a>
-        <a href="${basePath}pages/dashboard.html">Dashboard</a>
+        ${dashboardLink}
         <a href="${basePath}pages/about.html">Về chúng tôi</a>
       </div>
       <div class="nav-cta">
@@ -408,3 +416,51 @@ function scrollToBottom() {
   const messagesContainer = document.getElementById('chatMessages');
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
+
+// ---- Role Selection ----
+function initRoleSelection() {
+  const overlay = document.getElementById('welcomeOverlay');
+  if (!overlay) return; // Only exists on index.html
+  
+  const currentRole = localStorage.getItem('santime_role');
+  if (currentRole) {
+    overlay.classList.add('hidden');
+  }
+}
+
+window.selectRole = function(role) {
+  localStorage.setItem('santime_role', role);
+  document.getElementById('welcomeOverlay').classList.add('hidden');
+  
+  // Reload page to update Navbar based on role
+  setTimeout(() => {
+    window.location.reload();
+  }, 400);
+};
+
+// ---- System Admin Logic ----
+function initAdminButton() {
+  const adminHTML = `
+    <div id="adminFloatingBtn" class="admin-floating-btn" onclick="promptAdminLogin()" title="Quản trị hệ thống">
+      ⚙️
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', adminHTML);
+}
+
+window.promptAdminLogin = function() {
+  const password = prompt('Vui lòng nhập mật khẩu Quản trị viên (123456789):');
+  if (password === '123456789') {
+    showToast('Đăng nhập thành công! Chuyển hướng...', 'success');
+    
+    // Determine path prefix (are we in pages/ or root?)
+    const isRoot = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
+    const adminPath = isRoot ? 'pages/admin.html' : 'admin.html';
+    
+    setTimeout(() => {
+      window.location.href = adminPath;
+    }, 1000);
+  } else if (password !== null) {
+    showToast('Mật khẩu không chính xác!', 'error');
+  }
+};

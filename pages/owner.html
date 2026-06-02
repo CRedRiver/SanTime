@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý sân - SanTime</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css"> <!-- Shared admin styles -->
+  <!-- Flatpickr for Date Selection -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+</head>
+<body>
+  <!-- Navbar will be injected here by app.js -->
+  <div id="navbar-container"></div>
+
+  <main class="admin-page section pt-md">
+    <div class="container">
+      
+      <!-- Header -->
+      <header class="admin-header mb-2xl fade-in-up">
+        <div class="flex justify-between items-center">
+          <div>
+            <div class="badge badge-primary mb-xs">Dành riêng cho Chủ sân</div>
+            <h1 class="text-3xl mb-xs" id="ownerCourtName">Quản lý Sân</h1>
+            <p class="text-secondary">Theo dõi chi tiết các lượt đặt sân của bạn.</p>
+          </div>
+          
+          <div class="admin-controls flex gap-md items-center">
+            <div class="date-picker-wrap">
+              <input type="text" id="ownerDatePicker" class="form-input" placeholder="Chọn ngày xem">
+            </div>
+            
+            <div class="view-toggle">
+              <button id="btnViewList" class="btn btn-primary btn-sm" onclick="setOwnerView('list')">Danh sách</button>
+              <button id="btnViewMatrix" class="btn btn-outline btn-sm" onclick="setOwnerView('matrix')">Ma trận</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Stats -->
+      <div class="grid-4 gap-lg mb-2xl stagger-children" id="ownerStats">
+        <!-- Injected by JS -->
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="admin-content-card card-glass fade-in-up p-0 overflow-hidden">
+        
+        <!-- List View -->
+        <div id="ownerListView" class="owner-view active">
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Mã đặt</th>
+                  <th>Người đặt</th>
+                  <th>Ngày</th>
+                  <th>Khung giờ</th>
+                  <th>Trạng thái</th>
+                  <th class="text-right">Tổng tiền</th>
+                  <th class="text-center">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="ownerListTbody">
+                <!-- Data injected by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- Matrix View -->
+        <div id="ownerMatrixView" class="owner-view" style="display: none; padding: var(--space-xl);">
+          <div class="matrix-legend mb-md flex gap-md">
+            <div class="flex items-center gap-xs"><div class="legend-box available"></div> Trống</div>
+            <div class="flex items-center gap-xs"><div class="legend-box booked"></div> Đã đặt</div>
+          </div>
+          <div class="booking-matrix-wrapper" style="overflow-x: auto;">
+            <div class="booking-matrix" id="ownerMatrixContainer">
+              <!-- Matrix injected by JS -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer will be injected here by app.js -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/vn.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/owner.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('navbar-container').innerHTML = getNavbarHTML('../');
+        document.getElementById('footer-container').innerHTML = getFooterHTML('../');
+        initNavbar();
+        initMobileMenu();
+    });
+  </script>
+</body>
+</html>
