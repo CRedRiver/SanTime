@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initMobileMenu();
   initCounterAnimations();
+  initChatWidget();
 });
 
 // ---- Navbar Scroll Effect ----
@@ -314,4 +315,96 @@ function getFooterHTML(basePath = '') {
       </div>
     </div>
   </footer>`;
+}
+
+// ---- Chat Widget ----
+function initChatWidget() {
+  const chatHTML = `
+    <div id="chatWidget" class="chat-widget">
+      <div class="chat-header" id="chatHeader" onclick="toggleChat()">
+        <div class="chat-header-info">
+          <span class="chat-header-icon">💬</span>
+          <span class="chat-header-title">Hỗ trợ & Cộng đồng</span>
+        </div>
+        <span class="chat-toggle-icon">▲</span>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-message received">
+            <div class="chat-message-avatar">⚡</div>
+            <div class="chat-message-content">
+              <div class="chat-message-sender">SanTime Bot</div>
+              <div class="chat-message-text">Chào bạn! Mình có thể giúp gì cho bạn hôm nay? Bạn có thể tìm sân, ghép đội, hoặc hỏi bất kỳ thông tin nào ở đây nhé.</div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <input type="text" id="chatInput" placeholder="Nhập tin nhắn..." onkeypress="handleChatKey(event)">
+          <button id="chatSendBtn" class="btn btn-primary" onclick="sendChatMessage()">Gửi</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', chatHTML);
+}
+
+window.toggleChat = function() {
+  const widget = document.getElementById('chatWidget');
+  const toggleIcon = document.querySelector('.chat-toggle-icon');
+  if (widget.classList.contains('open')) {
+    widget.classList.remove('open');
+    toggleIcon.textContent = '▲';
+  } else {
+    widget.classList.add('open');
+    toggleIcon.textContent = '▼';
+    document.getElementById('chatInput').focus();
+    setTimeout(scrollToBottom, 100);
+  }
+};
+
+window.handleChatKey = function(e) {
+  if (e.key === 'Enter') {
+    sendChatMessage();
+  }
+};
+
+window.sendChatMessage = function() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if (!text) return;
+
+  appendMessage('sent', 'Bạn', text);
+  input.value = '';
+
+  // Simulate bot response
+  setTimeout(() => {
+    let reply = 'Cảm ơn bạn đã liên hệ! Hiện tại bot đang trong quá trình thử nghiệm. Vui lòng thử lại sau nhé.';
+    if (text.toLowerCase().includes('sân') || text.toLowerCase().includes('đặt')) {
+      reply = 'Bạn có thể vào mục "Tìm sân" để xem danh sách các sân trống, hoặc vào "Đặt sân" để chọn lịch nhé!';
+    } else if (text.toLowerCase().includes('ghép') || text.toLowerCase().includes('đội')) {
+      reply = 'Hãy vào mục "Ghép đội", chọn môn thể thao và trình độ, hệ thống sẽ tự động tìm đồng đội phù hợp cho bạn trong vài giây!';
+    }
+    appendMessage('received', 'SanTime Bot', reply);
+  }, 1000);
+};
+
+function appendMessage(type, sender, text) {
+  const messagesContainer = document.getElementById('chatMessages');
+  const avatar = type === 'sent' ? '👤' : '⚡';
+  const html = `
+    <div class="chat-message ${type}">
+      <div class="chat-message-avatar">${avatar}</div>
+      <div class="chat-message-content">
+        <div class="chat-message-sender">${sender}</div>
+        <div class="chat-message-text">${text}</div>
+      </div>
+    </div>
+  `;
+  messagesContainer.insertAdjacentHTML('beforeend', html);
+  scrollToBottom();
+}
+
+function scrollToBottom() {
+  const messagesContainer = document.getElementById('chatMessages');
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
