@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SanTime - Ghép đội thông minh & Đặt sân Real-time</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+  <!-- Navbar will be injected here by app.js -->
+  <div id="navbar-container"></div>
+
+  <!-- HERO SECTION -->
+  <header class="hero section relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+    
+    <div class="container relative z-10 text-center">
+      <div class="hero-content stagger-children">
+        <h1 class="hero-title">
+          Kết nối đam mê —<br>
+          <span class="text-gradient">Chơi ngay, không chờ đợi</span>
+        </h1>
+        <p class="hero-subtitle">
+          Nền tảng ghép đội thể thao thông minh & đặt sân theo thời gian thực tại Hà Nội.
+        </p>
+        <div class="hero-actions flex justify-center gap-md mt-xl">
+          <a href="pages/matchmaking.html" class="btn btn-primary btn-lg">
+            Bắt đầu ngay
+            <span class="btn-icon-right">⚡</span>
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary btn-lg">Tìm hiểu thêm</a>
+        </div>
+        
+        <div class="hero-stats flex justify-center gap-2xl mt-4xl">
+          <div class="stat-item">
+            <div class="stat-value"><span data-counter="500" data-suffix="+">0</span></div>
+            <div class="stat-label">Sân thể thao</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value"><span data-counter="10000" data-suffix="+">0</span></div>
+            <div class="stat-label">Người chơi</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value"><span data-counter="50000" data-suffix="+">0</span></div>
+            <div class="stat-label">Trận đã ghép</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value text-gradient-primary">4.8</div>
+            <div class="stat-label">Đánh giá TB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROBLEMS SECTION -->
+  <section class="section" id="problems">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Vấn đề</span>
+        <h2>Vấn đề bạn đang gặp phải?</h2>
+        <p>Chúng tôi hiểu những khó khăn của bạn khi tổ chức một trận đấu thể thao.</p>
+      </div>
+      
+      <div class="grid-3 gap-lg stagger-children">
+        <!-- Card 1 -->
+        <div class="card problem-card">
+          <div class="card-icon">😤</div>
+          <h3>Khó tìm đồng đội</h3>
+          <p>Đăng bài trên Facebook, chờ hàng giờ vẫn không đủ người. Thông tin trôi nhanh, phản hồi chậm.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="card problem-card">
+          <div class="card-icon">🏟️</div>
+          <h3>Cháy sân liên tục</h3>
+          <p>Giờ cao điểm luôn hết sân. Gọi điện, nhắn tin từng chủ sân rất mất thời gian.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="card problem-card">
+          <div class="card-icon">💣</div>
+          <h3>Bom kèo thường xuyên</h3>
+          <p>Thành viên hủy sát giờ, cả đội phải gánh thêm chi phí. Không có cơ chế ràng buộc.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION SECTION -->
+  <section class="section relative" id="features">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Giải pháp</span>
+        <h2>SanTime giải quyết tất cả</h2>
+        <p>Một nền tảng duy nhất cho mọi nhu cầu thể thao của bạn.</p>
+      </div>
+      
+      <div class="grid-3 gap-lg stagger-children">
+        <!-- Card 1 -->
+        <div class="card feature-card feature-green">
+          <div class="card-icon">🤖</div>
+          <h3>Ghép đội thông minh</h3>
+          <p>AI ghép trận dựa trên trình độ, vị trí và thời gian. Tìm đội trong vài giây.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="card feature-card feature-blue">
+          <div class="card-icon">📍</div>
+          <h3>Đặt sân Real-time</h3>
+          <p>Xem lịch trống, đặt sân và thanh toán ngay trên một nền tảng duy nhất.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="card feature-card feature-orange">
+          <div class="card-icon">⭐</div>
+          <h3>Rating uy tín</h3>
+          <p>Hệ thống đánh giá người chơi giúp hạn chế tối đa tình trạng bom kèo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section bg-secondary" id="how-it-works">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Hướng dẫn</span>
+        <h2>Cách hoạt động</h2>
+        <p>Chỉ với 4 bước đơn giản để bắt đầu trận đấu của bạn.</p>
+      </div>
+      
+      <div class="timeline flex flex-wrap gap-xl justify-center stagger-children">
+        <div class="timeline-step">
+          <div class="step-icon">📱</div>
+          <div class="step-number">01</div>
+          <h4>Đăng ký</h4>
+          <p>Tạo tài khoản miễn phí chỉ trong 30 giây</p>
+        </div>
+        <div class="timeline-connector"></div>
+        
+        <div class="timeline-step">
+          <div class="step-icon">🎯</div>
+          <div class="step-number">02</div>
+          <h4>Chọn môn</h4>
+          <p>Chọn môn thể thao và khung giờ mong muốn</p>
+        </div>
+        <div class="timeline-connector"></div>
+        
+        <div class="timeline-step">
+          <div class="step-icon">🤝</div>
+          <div class="step-number">03</div>
+          <h4>Ghép đội</h4>
+          <p>Hệ thống tự động tìm đồng đội phù hợp</p>
+        </div>
+        <div class="timeline-connector"></div>
+        
+        <div class="timeline-step">
+          <div class="step-icon">⚡</div>
+          <div class="step-number">04</div>
+          <h4>Chơi ngay!</h4>
+          <p>Xác nhận, thanh toán và ra sân thôi!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS/SURVEY SECTION -->
+  <section class="section" id="stats">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Nghiên cứu</span>
+        <h2>Dữ liệu khảo sát thực tế</h2>
+        <p>Phát triển dựa trên nhu cầu thực sự của cộng đồng thể thao phong trào.</p>
+      </div>
+      
+      <div class="grid-2 gap-xl items-center fade-in">
+        <div class="survey-content">
+          <h3>Tính năng được mong đợi nhất</h3>
+          <p class="mb-lg">Kết quả khảo sát từ <span class="text-primary font-bold">70</span> sinh viên và người đi làm tại khu vực Hà Nội cho thấy nhu cầu cấp thiết về một nền tảng kết nối uy tín.</p>
+          
+          <div class="progress-item mb-md">
+            <div class="flex justify-between mb-xs">
+              <span class="font-medium">Hệ thống đánh giá uy tín (Rating)</span>
+              <span>46 bình chọn</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 65%; background-color: var(--primary)"></div>
+            </div>
+          </div>
+          
+          <div class="progress-item mb-md">
+            <div class="flex justify-between mb-xs">
+              <span class="font-medium">Tìm đội theo thời gian cụ thể</span>
+              <span>45 bình chọn</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 64%; background-color: var(--secondary)"></div>
+            </div>
+          </div>
+          
+          <div class="progress-item mb-md">
+            <div class="flex justify-between mb-xs">
+              <span class="font-medium">Hiển thị trạng thái Online/Offline</span>
+              <span>38 bình chọn</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 54%; background-color: var(--accent)"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="survey-visual card-glass relative animate-float">
+            <div class="flex flex-col items-center justify-center p-xl">
+                <div class="stat-value text-gradient mb-sm">29/70</div>
+                <div class="text-center font-medium">Người dùng ưu tiên tốc độ phản hồi nhanh nhất.</div>
+                <div class="mt-lg text-center text-sm text-tertiary">
+                    SanTime được thiết kế tối ưu UX/UI để đảm bảo bạn có thể thao tác và nhận kết quả nhanh nhất!
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section cta-section relative overflow-hidden text-center">
+    <!-- Background glow -->
+    <div class="cta-glow"></div>
+    
+    <div class="container relative z-10 fade-in-up">
+      <h2 class="text-4xl font-bold mb-md">Sẵn sàng chơi thể thao?</h2>
+      <p class="text-xl text-secondary mb-xl max-w-2xl mx-auto">
+        Tham gia cộng đồng 10,000+ người chơi thể thao tại Hà Nội. Đừng để đam mê phải chờ đợi!
+      </p>
+      <a href="pages/matchmaking.html" class="btn btn-primary btn-lg pulse">Đăng ký miễn phí ngay</a>
+    </div>
+  </section>
+
+  <!-- Footer will be injected here by app.js -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Initialize common components
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('navbar-container').innerHTML = getNavbarHTML('');
+        document.getElementById('footer-container').innerHTML = getFooterHTML('');
+        // Re-init navbar script logic since we just inserted the HTML
+        initNavbar();
+        initMobileMenu();
+    });
+  </script>
+</body>
+</html>

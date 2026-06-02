@@ -1,0 +1,152 @@
+/* ============================================
+   SANTIME – About Page Styles
+   ============================================ */
+
+/* ---- TAM SAM SOM Chart ---- */
+.market-circles-container {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-2xl) 0;
+}
+
+.market-circle {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.market-label {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.market-desc {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+}
+
+.tam {
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 176, 255, 0.05); /* Secondary */
+  border-color: rgba(0, 176, 255, 0.3);
+  padding-top: var(--space-xl);
+}
+.tam .market-label { color: var(--secondary); }
+
+.sam {
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 109, 0, 0.1); /* Accent */
+  border-color: rgba(255, 109, 0, 0.4);
+  padding-top: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+.sam .market-label { color: var(--accent); }
+
+.som {
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 230, 118, 0.15); /* Primary */
+  border-color: rgba(0, 230, 118, 0.5);
+  padding-top: calc(var(--space-xl) + var(--space-md));
+  margin-top: var(--space-lg);
+  box-shadow: 0 0 30px rgba(0, 230, 118, 0.2);
+}
+.som .market-label { color: var(--primary); }
+
+.market-circle:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ---- Business Model Canvas Grid ---- */
+.bmc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.bmc-cell {
+  padding: var(--space-xl);
+  border-left: 3px solid transparent;
+}
+.bmc-cell:nth-child(1) { border-left-color: var(--primary); }
+.bmc-cell:nth-child(2) { border-left-color: var(--secondary); }
+.bmc-cell:nth-child(3) { border-left-color: var(--accent); }
+.bmc-cell:nth-child(4) { border-left-color: var(--warning); }
+.bmc-cell:nth-child(5) { border-left-color: var(--success); }
+
+/* ---- Roadmap Timeline ---- */
+.roadmap-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.roadmap-timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: var(--border-strong);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.rm-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.rm-item::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  background-color: var(--bg-card);
+  border: 4px solid var(--text-tertiary);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left { left: 0; }
+.right { left: 50%; }
+.right::after { left: -8px; }
+
+.rm-content {
+  padding: var(--space-lg);
+  position: relative;
+  border-radius: var(--radius-lg);
+}
+
+.rm-item:nth-child(2)::after { border-color: var(--primary); background-color: var(--primary); box-shadow: 0 0 10px var(--primary-glow); }
+.rm-item:nth-child(1)::after { border-color: var(--primary); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tam { width: 300px; height: 300px; }
+  .sam { width: 200px; height: 200px; }
+  .som { width: 120px; height: 120px; padding-top: var(--space-md); }
+  .som .market-label, .som .market-desc { font-size: 10px; }
+  
+  .bmc-grid { grid-template-columns: 1fr; }
+  .bmc-cell[style] { grid-column: span 1 !important; }
+  .bmc-cell ul.flex { flex-direction: column; gap: var(--space-xs); }
+  
+  .roadmap-timeline::after { left: 31px; }
+  .rm-item { width: 100%; padding-left: 70px; padding-right: 0px; }
+  .rm-item::after { left: 23px; }
+  .right { left: 0%; }
+}

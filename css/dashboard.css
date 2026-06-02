@@ -1,0 +1,355 @@
+/* ============================================
+   SANTIME – Dashboard Page Styles
+   ============================================ */
+
+.dashboard-page {
+  padding-top: calc(var(--navbar-height) + var(--space-xl));
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* ---- Stats Cards ---- */
+.stat-card {
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+/* ---- Upcoming Matches ---- */
+.upcoming-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.upcoming-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.upcoming-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-default);
+  transform: translateX(4px);
+}
+
+.uc-main { display: flex; gap: var(--space-md); align-items: center; }
+.uc-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.uc-title { font-size: var(--text-lg); font-weight: 600; margin-bottom: 2px; }
+.uc-meta { font-size: var(--text-sm); color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
+
+.uc-players {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.uc-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* ---- Activity Chart ---- */
+.chart-container {
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-top: var(--space-lg);
+  position: relative;
+}
+
+/* Grid lines */
+.chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 30px;
+  background: 
+    linear-gradient(to bottom, transparent 99%, var(--border-subtle) 100%) 0 0 / 100% 25%;
+  z-index: 0;
+}
+
+.chart-bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  z-index: 1;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bar {
+  width: 40px;
+  background: linear-gradient(to top, rgba(0,230,118,0.2) 0%, var(--primary) 100%);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.3) inset;
+}
+
+.chart-bar:hover {
+  filter: brightness(1.2);
+}
+
+.chart-bar:hover::after {
+  content: attr(data-val);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.chart-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  height: 30px;
+}
+
+/* ---- History Table ---- */
+.table-responsive { overflow-x: auto; }
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.history-table th {
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(0,0,0,0.2);
+}
+
+.history-table td {
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-sm);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  transition: background var(--transition-fast);
+}
+
+.history-table tr:last-child td { border-bottom: none; }
+.history-table tbody tr:hover td { background: rgba(255,255,255,0.02); color: var(--text-primary); }
+
+.history-table .court-name { font-weight: 500; color: var(--text-primary); }
+
+/* ---- Sidebar Profile ---- */
+.profile-avatar {
+  display: inline-block;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 50%;
+}
+
+.profile-avatar svg {
+  border: 3px solid var(--bg-card);
+  border-radius: 50%;
+}
+
+/* ---- Team List ---- */
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+.team-member:hover { background: rgba(255,255,255,0.05); }
+
+.tm-info { flex-grow: 1; min-width: 0; }
+.tm-name { font-size: var(--text-sm); font-weight: 500; }
+.tm-pos { font-size: var(--text-xs); color: var(--text-tertiary); }
+
+/* ---- Notifications ---- */
+.notification-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-item {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.notification-item:last-child { border-bottom: none; padding-bottom: 0; }
+.notification-item:hover { opacity: 0.8; }
+
+.noti-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--bg-tertiary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.noti-content p { font-size: var(--text-sm); margin-bottom: 2px; line-height: 1.4; color: var(--text-secondary); }
+.noti-time { font-size: var(--text-xs); color: var(--text-tertiary); }
+
+.notification-item.unread .noti-content p { color: var(--text-primary); font-weight: 500; }
+.noti-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; margin-top: 4px; opacity: 0; }
+.notification-item.unread .noti-dot { opacity: 1; }
+
+/* ---- Personal Booking Cards ---- */
+.my-booking-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  transition: all var(--transition-base);
+}
+.my-booking-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-default);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.my-booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+.my-booking-main {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.my-booking-sport-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.my-booking-court {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.my-booking-meta {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.my-booking-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.my-booking-price {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--primary);
+  font-family: var(--font-heading);
+}
+
+.my-booking-details {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-md);
+}
+
+.my-booking-times {
+  margin-bottom: var(--space-md);
+}
+
+.my-booking-time-row {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  padding: 4px 0 4px 16px;
+  border-left: 2px solid var(--primary);
+  margin-top: 4px;
+}
+
+.my-booking-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-booking-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-layout { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .grid-4 { grid-template-columns: 1fr; }
+  .upcoming-card { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+  .uc-actions { width: 100%; }
+  .uc-actions .btn { flex: 1; }
+}

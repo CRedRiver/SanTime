@@ -1,0 +1,214 @@
+/* ============================================
+   SANTIME – Landing Page Styles
+   ============================================ */
+
+/* ---- Hero Section ---- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--navbar-height);
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--primary-glow-strong);
+  top: -100px;
+  left: -100px;
+  animation: float 8s infinite alternate;
+}
+
+.orb-2 {
+  width: 500px;
+  height: 500px;
+  background: var(--secondary-glow);
+  bottom: -200px;
+  right: -100px;
+  animation: float 10s infinite alternate-reverse;
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent-glow);
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  animation: pulse-glow 6s infinite;
+}
+
+.hero-title {
+  font-size: var(--text-6xl);
+  margin-bottom: var(--space-lg);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: var(--text-xl);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3xl);
+  background: var(--bg-glass);
+  padding: var(--space-xl) var(--space-3xl);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(20px);
+}
+
+/* ---- Problems Section ---- */
+.problem-card {
+  text-align: center;
+}
+.problem-card .card-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  transition: transform var(--transition-spring);
+}
+.problem-card:hover .card-icon {
+  transform: scale(1.2) translateY(-10px);
+}
+.problem-card:hover {
+  box-shadow: 0 10px 40px rgba(255, 82, 82, 0.1);
+  border-color: rgba(255, 82, 82, 0.3);
+}
+
+/* ---- Features Section ---- */
+.feature-card {
+  padding: var(--space-xl);
+}
+.feature-card .card-icon {
+  font-size: 2.5rem;
+  width: 80px;
+  height: 80px;
+  background: var(--bg-glass-strong);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.feature-green:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 40px var(--primary-glow);
+}
+.feature-green:hover .card-icon { background: rgba(0, 230, 118, 0.15); }
+
+.feature-blue:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 10px 40px var(--secondary-glow);
+}
+.feature-blue:hover .card-icon { background: rgba(0, 176, 255, 0.15); }
+
+.feature-orange:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 40px var(--accent-glow);
+}
+.feature-orange:hover .card-icon { background: rgba(255, 109, 0, 0.15); }
+
+
+/* ---- How It Works (Timeline) ---- */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.timeline-step {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  position: relative;
+  padding: var(--space-xl) var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-base);
+}
+.timeline-step:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  background: var(--bg-glass-strong);
+}
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: var(--text-inverse);
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: var(--radius-xl);
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-glow-primary);
+}
+.timeline-connector {
+  display: none;
+}
+
+/* ---- Survey Progress Bars ---- */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-card-hover);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: var(--radius-xl);
+  transition: width 1.5s ease-out;
+}
+
+/* ---- CTA Section ---- */
+.cta-section {
+  padding: var(--space-4xl) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, var(--primary-glow-strong) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+}
+.pulse {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-title { font-size: var(--text-5xl); }
+  .hero-stats { flex-wrap: wrap; gap: var(--space-lg); }
+  .stat-item { flex: 1 1 40%; text-align: center; }
+}
+@media (max-width: 768px) {
+  .hero-title { font-size: var(--text-4xl); }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
