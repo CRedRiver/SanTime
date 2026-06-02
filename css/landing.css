@@ -209,6 +209,4 @@
 }
 @media (max-width: 768px) {
   .hero-title { font-size: var(--text-4xl); }
-  .grid-3 { grid-template-columns: 1fr; }
-  .grid-2 { grid-template-columns: 1fr; }
 }
