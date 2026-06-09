@@ -1,0 +1,161 @@
+﻿ĐẠI HỌC BÁCH KHOA HÀ NỘI
+HỌC PHẦN CH2021
+ĐỔI MỚI SÁNG TẠO VÀ KHỞI NGHIỆP
+BÁO CÁO DỰ ÁN
+Dịch vụ ghép người và tìm sân
+NHÓM ….  Mã lớp:
+MSSV
+Họ và tên
+202416705
+Hoàng Bảo Huy 
+202416677 
+Lê Minh Đức 
+20224922 
+Nguyễn Trọng Thế Anh 
+20222052 
+Vương Toàn Quyền 
+202512312 
+Thân Gia Bảo 
+202416687 
+Trần Hồng Hà 
+Giảng viên hướng dẫn:
+ThS Quách Thị Phượng
+HÀ NỘI, 6/2026
+Quy định về trình bày đồ án
+Đồ án phải được trình bày trên khổ giấy A4, căn lề trên 2,0 cm, lề dưới 2,0 cm, lề trái 3,0 cm và lề phải 2,0 cm. 
+Phông chữ thống nhất sử dụng trong đồ án Times New Roman, cỡ chữ 13, bảng mã Unicode; căn lề hai phía (Justify), giãn dòng 1.2, After 0 pt, Before 6 pt.
+Hướng dẫn cách ghi các thông tin liên quan đến các hình ảnh trong đồ án được trình bày trên Hình 1.1. Hướng dẫn này dựa trên mẫu quyển đồ án tốt nghiệp do phòng đào tạo ban hành. [1]
+Hình 1.1. Những yêu cầu đối với hình ảnh trong đồ án
+Các bảng phải được đánh số, đặt tên, dẫn nguồn tài liệu tham khảo (nếu có), và tên hình phải được đặt phía trên hình như trình bày ở Bảng 1.1. Bảng phải được đề cập trong bài viết (như ở câu trước). Các chữ số thập phân trong bài viết, trong hình và trong bảng phải được viết với số chữ số có nghĩa hợp lý. Nếu phù hợp, các số liệu phải có đơn vị đo. [2]
+Bảng 1.1. Số liệu tuyển sinh giai đoạn 2016-2020. [3]
+Chương trình đào tạo
+Số lượng sinh viên
+K61
+K62
+K63
+K64
+K65
+Kỹ thuật hóa học
+Hóa học
+Kỹ thuật in và truyền thông
+Chương trình tiên tiến hóa dược
+0
+0
+0
+Nội dung báo cáo gồm các phần sau:
+Thực trạng (vấn đề)
+Thực trạng:
+Vấn đề tìm người, không gian phù hợp cho các hoạt động nhóm, cộng đồng còn khá nan giải đối với nhiều người; về chủ đề này nhóm tôi tập trung hơn vào thực trạng về những khó khăn nhiều người gặp phải trong việc ghép đội, tìm sân bóng.
+Đối tượng trọng tâm (Ai gặp vấn đề):
+Sinh viên và những người có mong muốn chơi và tìm người cùng chơi những môn thể thao mang tính đồng đội cao như bóng đá, bóng chuyền, …, đặc biệt là những người từ quê lên học, làm việc, chưa quen biết nhiều người, nhiều nơi, nhưng có niềm đam mê với những môn thể thao đó.
+Một số nhóm người mong muốn có nền tảng đặt sân uy tín cũng như có nhu cầu rủ giao lưu.
+Vấn đề xảy ra khi nào? (Thời điểm)
+Giờ cao điểm: Thường là sau giờ làm việc, giờ tan tầm (17h - 20h) hoặc cuối tuần, khi nhu cầu chơi thể thao tăng vọt dẫn đến tình trạng "cháy sân", khó đặt chỗ.
+Sát giờ thi đấu: Khi một đội/nhóm bị thiếu người do có thành viên báo bận hoặc hủy kèo đột xuất ("bom" kèo), cần tìm người thay thế gấp.
+Phát sinh nhu cầu cá nhân: Khi một người đột nhiên có thời gian rảnh và muốn chơi thể thao ngay nhưng không rủ được bạn bè quen thuộc hoặc không có sẵn đội để tham gia.
+Khi chủ sân trống lịch: Khách hàng hủy lịch đặt sân vào phút chót hoặc có các khung giờ lẻ tẻ (giờ thấp điểm) mà chủ sân không tìm được khách thuê.
+ Ở đâu?
+Tại các thành phố lớn: Nơi có phong trào thể thao sinh viên và người đi làm rất mạnh nhưng quỹ đất sân bãi lại hạn chế (điển hình như tại khu vực Hà Nội), khiến cung không đủ cầu.
+Trên các mạng xã hội: Vấn đề thể hiện rõ nhất trên các hội nhóm Facebook, Zalo. Người chơi liên tục đăng bài tìm người, tìm sân, "bắt đối" nhưng thông tin bị trôi rất nhanh, khó xác nhận trình độ của nhau và mất nhiều thời gian chờ đợi phản hồi.
+Tại các cụm sân thể thao: Các quy trình quản lý đặt sân truyền thống (ghi sổ, gọi điện) gây khó khăn cho người chơi trong việc tra cứu lịch trống theo thời gian thực.
+Mức độ nghiêm trọng của vấn đề
+Vấn đề không chỉ dừng lại ở sự bất tiện cá nhân mà là "điểm nghẽn" thông tin của cả hệ sinh thái thể thao phong trào. Việc kết nối thủ công qua mạng xã hội đang gây lãng phí lớn về thời gian và nguồn lực xã hội, khiến nhu cầu rèn luyện sức khỏe bị cản trở bởi các rào cản kỹ thuật và lòng tin.
+Hậu quả nếu không được giải quyết
+Đối với người chơi (Đặc biệt là sinh viên & người mới)
+Triệt tiêu động lực: Quy trình tìm đội phức tạp, dễ bị "bùng" kèo khiến người chơi nản lòng, dần từ bỏ thói quen vận động lành mạnh.
+Khó hòa nhập: Thiếu công cụ kết nối khiến những người mới (sinh viên tỉnh lẻ, người chuyển công tác) bị cô lập, mất đi cơ hội giao lưu và xây dựng mối quan hệ tại môi trường mới.
+Thiệt hại tài chính: Việc thiếu cơ chế đặt cọc khiến người chơi thường xuyên phải gánh thêm chi phí sân bãi khi thành viên khác hủy kèo đột xuất.
+Đối với chủ sân
+Lãng phí công suất: Các khung giờ thấp điểm bị bỏ trống do không có công cụ tiếp cận khách hàng vãng lai, gây thất thoát doanh thu trong khi chi phí vận hành vẫn phát sinh.
+Rủi ro vận hành: Quản lý truyền thống (ghi sổ, gọi điện) dễ gây nhầm lẫn lịch và không có chế tài xử lý khách "bom" sân, gây thiệt hại kinh tế trực tiếp.
+Đối với xã hội
+Lãng phí quỹ đất đô thị: Tại các thành phố lớn như Hà Nội, quỹ đất thể thao hạn hẹp nhưng lại không được tối ưu hóa hiệu suất sử dụng do lệch pha cung - cầu.
+Môi trường thiếu minh bạch: Các hội nhóm tự phát dễ nảy sinh lừa đảo tiền cọc hoặc mâu thuẫn do không có hệ thống đánh giá uy tín và trình độ rõ ràng.
+Dữ liệu chứng minh nhu cầu thị trường:
+Dữ liệu khảo sát cho thấy 70 phản hồi, phân bố từ năm 1 đến cao học. Các nền tảng được dùng nhiều gồm Facebook (13), Zalo (9), LinkedIn (9), diễn đàn sinh viên (9), Facebook Groups (6) và bạn bè giới thiệu (5). 
+→ Điều này chứng minh sinh viên đã có hành vi tìm kiếm kết nối nhưng chưa có một nền tảng chuyên biệt cho nhu cầu theo thời gian và địa điểm. Tuy nhiên, vấn đề hiện hành trong đa số câu trả lời là sự chậm trễ, thất vọng do không được đáp ứng hết, …
+Các tính năng được mong đợi nhất trong khảo sát gồm: hệ thống đánh giá uy tín/review (46 lượt), ghép cặp phù hợp theo kỹ năng/mục tiêu (46 lượt), tìm người theo thời gian cụ thể (45 lượt), hiển thị trạng thái online/offline (38 lượt), chat trong hệ thống (35 lượt). Với ý tưởng của nhóm, nội dung bình chọn này được chuyển hóa thành: đánh giá sân và người tham gia, ghép nhóm thuê sân theo khung giờ, hiển thị sân còn trống, chat nhóm và xác nhận đặt lịch.
+Về trải nghiệm, 29 người ưu tiên phản hồi nhanh, 26 người muốn cân bằng giữa tốc độ và chính xác, 15 người ưu tiên chính xác. Vì vậy sản phẩm cần ưu tiên giao diện đặt nhanh nhưng vẫn hiển thị thông tin đáng tin cậy về giá, giờ trống, vị trí và đánh giá.
+Nội dung ý tưởng
+Ý tưởng cốt lõi: Ứng dụng 'SanTime' là nền tảng di động kết nối những người có nhu cầu chơi thể thao (đặc biệt là bóng đá, bóng chuyền, cầu lông) nhưng thiếu đồng đội, đồng thời cung cấp dịch vụ đặt sân thể thao nhanh chóng theo thời gian thực.
+Giải pháp mới & Khác biệt: Thay vì việc tìm người và đặt sân một cách thủ công qua các hội nhóm mạng xã hội (chờ đợi phản hồi lâu, thông tin trôi nhanh, không đảm bảo uy tín), SanTime cung cấp hệ thống ghép trận thông minh dựa trên trình độ, vị trí và thời gian. Nền tảng còn tích hợp trực tiếp với hệ thống quản lý của chủ sân để cập nhật lịch trống theo thời gian thực, một tính năng mà các nhóm cộng đồng không có được.
+Lợi ích mang lại: Nhanh hơn (tìm đội và đặt sân chỉ trong vài giây thay vì hàng giờ); Thuận tiện hơn (gom chung tính năng ghép người, đặt sân và thanh toán vào một nền tảng duy nhất); An toàn hơn (hệ thống đánh giá uy tín user rating để hạn chế tối đa tình trạng 'bom' kèo, hủy ngang).
+Phân tích thị trường
+Xác định khách hàng mục tiêu:
+Nhóm khách hàng chính:
+Sinh viên, nhân viên văn phòng và người trẻ từ 18–35 tuổi có nhu cầu chơi thể thao thường xuyên nhưng khó tìm đủ người chơi hoặc khó đặt sân phù hợp. 
+Các đội bóng, nhóm bạn chơi thể thao bán chuyên có nhu cầu đặt sân định kỳ và tìm thêm thành viên. 
+Chủ sân thể thao (sân bóng đá, cầu lông, bóng chuyền…) muốn tăng tỷ lệ lấp đầy sân và quản lý lịch đặt hiệu quả hơn. Đây cũng là nhóm tạo ra nguồn doanh thu chính thông qua phí hợp tác hoặc hoa hồng đặt sân. 
+Nhóm khách hàng thứ cấp:
+Người mới bắt đầu chơi thể thao muốn tìm cộng đồng hoặc đối thủ phù hợp trình độ. 
+Các câu lạc bộ thể thao tại trường học, công ty có nhu cầu tổ chức giao lưu, thi đấu nội bộ. 
+Các nhãn hàng thể thao, đồ uống năng lượng hoặc trung tâm thể hình có nhu cầu quảng bá đến cộng đồng yêu thể thao trên nền tảng.
+Tính TAM - SAM - SOM 
+Để đánh giá tiềm năng phát triển của dự án SanTime, nhóm sử dụng mô hình phân tích thị trường gồm 3 cấp độ: TAM (Tổng thị trường có thể tiếp cận), SAM (Thị trường có thể phục vụ) và SOM (Thị trường có thể chiếm lĩnh). Do dự án hiện đang ở giai đoạn ý tưởng khởi nghiệp sinh viên, nhóm tập trung vào cách tiếp cận thực tế, quy mô nhỏ và phù hợp với nguồn lực hiện có.
+1. TAM – Tổng thị trường có thể tiếp cận (Total Addressable Market)
+Phạm vi thị trường
+Sinh viên, nhân viên văn phòng và người chơi thể thao phong trào trên toàn quốc. 
+Các môn thể thao phổ biến như bóng đá, cầu lông, bóng chuyền, bóng rổ. 
+Nhu cầu thị trường
+Hiện nay, nhu cầu chơi thể thao theo nhóm ngày càng tăng, đặc biệt ở giới trẻ. Tuy nhiên, việc:
+tìm người chơi cùng, 
+tìm đối thủ, 
+đặt sân, 
+quản lý lịch chơi 
+vẫn chủ yếu được thực hiện qua Facebook, Zalo hoặc các hội nhóm tự phát, gây mất thời gian và thiếu tính ổn định.
+Tiềm năng
+Nếu được triển khai rộng rãi, SanTime có thể trở thành nền tảng hỗ trợ kết nối và đặt sân cho cộng đồng thể thao phong trào tại nhiều tỉnh thành lớn.
+2. SAM – Thị trường có thể phục vụ (Serviceable Available Market)
+Phạm vi thị trường mục tiêu
+Trong giai đoạn đầu, nhóm tập trung vào:
+khu vực Hà Nội, 
+đặc biệt là các quận tập trung nhiều trường đại học và sân thể thao. 
+Đối tượng khách hàng chính
+Sinh viên đại học có nhu cầu chơi thể thao thường xuyên. 
+Các đội nhóm thể thao phong trào. 
+Chủ sân muốn tăng lượng khách và quản lý lịch sân hiệu quả hơn. 
+Lý do lựa chọn
+Hà Nội có mật độ sinh viên cao. 
+Nhu cầu đặt sân lớn vào buổi tối và cuối tuần. 
+Nhóm phát triển dễ tiếp cận người dùng thử nghiệm do đang là sinh viên. 
+3. SOM – Thị trường có thể chiếm lĩnh (Serviceable Obtainable Market)
+SOM là phần thị trường thực tế mà SanTime có thể đạt được trong giai đoạn MVP (Minimum Viable Product).
+Phạm vi triển khai ban đầu
+Nhóm dự kiến triển khai thử nghiệm tại:
+khu vực quanh cụm trường Bách – Kinh – Xây, 
+nơi có lượng lớn sinh viên và hoạt động thể thao phong trào sôi động. 
+Mục tiêu ngắn hạn
+Trong giai đoạn đầu, SanTime đặt mục tiêu:
+xây dựng cộng đồng người dùng đầu tiên, 
+kết nối với một số sân thể thao khu vực lân cận, 
+hỗ trợ người dùng tìm đội và đặt sân thuận tiện hơn. 
+Định hướng phát triển
+Sau khi hoàn thiện phiên bản thử nghiệm và thu thập phản hồi người dùng, nhóm sẽ:
+cải thiện hệ thống ghép trận, 
+bổ sung tính năng thanh toán, 
+mở rộng sang các khu vực đại học khác tại Hà Nội. 
+Kết luận
+Mô hình TAM – SAM – SOM cho thấy SanTime có tiềm năng phát triển trong lĩnh vực thể thao phong trào và dịch vụ đặt sân trực tuyến. Với định hướng triển khai từng bước từ quy mô nhỏ đến mở rộng dần, dự án phù hợp với nguồn lực của một nhóm sinh viên khởi nghiệp và có khả năng phát triển trong tương lai nếu đáp ứng tốt nhu cầu thực tế của người dùng.
+Mô hình kinh doanh 
+1. Phân khúc khách hàng (Customer Segments): Sinh viên, người đi làm đam mê thể thao phong trào; Các chủ sân bãi thể thao.
+2. Giải pháp giá trị (Value Propositions): Đối với người chơi: Ghép đội nhanh chóng, đặt sân tiện lợi, tìm kiếm bạn chơi cùng trình độ. Đối với chủ sân: Tối ưu hóa tỷ lệ lấp đầy sân (đặc biệt vào giờ thấp điểm), quản lý lịch đặt sân dễ dàng, tự động.
+3. Kênh phân phối (Channels): Ứng dụng di động (iOS/Android), mạng xã hội (Facebook, Tiktok, Zalo), đối tác hội sinh viên tại các trường đại học.
+4. Quan hệ khách hàng (Customer Relationships): Hỗ trợ trực tuyến 24/7, xây dựng cộng đồng thể thao trên nền tảng, hệ thống đánh giá uy tín (rating).
+5. Dòng doanh thu (Revenue Streams): Phí hoa hồng từ các giao dịch đặt sân thành công; Gói hội viên (Premium) cho người dùng cá nhân (ưu tiên ghép đội, voucher giảm giá sân); Nguồn thu từ quảng cáo của các nhãn hàng thể thao.
+6. Nguồn lực chính (Key Resources): Nền tảng công nghệ ứng dụng, cơ sở dữ liệu về người dùng và sân bãi, đội ngũ nhân sự phát triển phần mềm và marketing.
+7. Hoạt động chính (Key Activities): Phát triển và bảo trì ứng dụng, chiến dịch marketing thu hút người dùng và chủ sân, quản lý cộng đồng, chăm sóc đối tác.
+8. Đối tác chính (Key Partnerships): Các chủ sân bãi thể thao, hội sinh viên các trường đại học (ĐHBK HN, ĐH KTQD, v.v.), các nhà cung cấp cổng thanh toán trực tuyến (VNPay, MoMo).
+9. Cơ cấu chi phí (Cost Structure): Chi phí phát triển, bảo trì và lưu trữ hệ thống (server); Chi phí marketing, khuyến mãi; Lương cho đội ngũ vận hành và quản lý.
+5. Đội ngũ thực hiện 
+Phân công nhiệm vụ cụ thể:
+- Hoàng Bảo Huy: Phụ trách tài chính dự án, kiểm soát dòng tiền và phân bổ ngân sách hoạt động.
+- Lê Minh Đức: Phụ trách thiết kế giao diện và trải nghiệm người dùng (UI/UX Design) cho nền tảng.
+- Nguyễn Trọng Thế Anh: Kỹ sư phát triển phần mềm (Frontend & Backend Developer), xây dựng kiến trúc hệ thống.
+- Vương Toàn Quyền: Chuyên viên nghiên cứu thị trường, lập kế hoạch và triển khai các chiến dịch Marketing.
+- Thân Gia Bảo: Phụ trách mảng vận hành, trực tiếp làm việc và đàm phán với các đối tác chủ sân.
+- Trần Hồng Hà: Quản lý tiến độ, điều phối công việc chung, định hướng chiến lược kinh doanh.
+Sự tham gia của các chuyên gia lĩnh vực khác:
+Để dự án thành công, nhóm cần thêm sự hỗ trợ từ:
+1. Chuyên gia tư vấn pháp lý: Để thiết lập các hợp đồng hợp tác ràng buộc pháp lý với các chủ sân, xử lý vấn đề thanh toán trực tuyến và chính sách bảo mật dữ liệu người dùng.
+2. Cố vấn công nghệ (CTO/Tech Lead): Hỗ trợ định hướng kiến trúc hệ thống xử lý dữ liệu thời gian thực quy mô lớn khi lượng người dùng tăng đột biến.
+3. Cố vấn kinh doanh và khởi nghiệp: Hỗ trợ xây dựng hồ sơ gọi vốn, kết nối với các quỹ đầu tư thiên thần (Angel Investors) và mở rộng thị trường trong tương lai.

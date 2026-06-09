@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Sân & Đặt Sân - SanTime</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/booking.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/vn.js"></script>
+</head>
+<body>
+  <!-- Navbar will be injected here by app.js -->
+  <div id="navbar-container"></div>
+
+  <main class="booking-page">
+    <div class="container section pb-md">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb fade-in">
+        <a href="../index.html">Trang chủ</a>
+        <span class="separator">›</span>
+        <a href="courts.html">Tìm sân</a>
+        <span class="separator">›</span>
+        <span class="current" id="breadcrumbName">Đang tải...</span>
+      </nav>
+
+      <!-- Header Info -->
+      <header class="court-header fade-in">
+        <div class="court-title-area">
+          <div class="flex items-center gap-sm mb-sm">
+            <span class="badge" id="courtSportBadge">...</span>
+            <span class="badge" id="courtStatusBadge">...</span>
+          </div>
+          <h1 class="text-4xl mb-sm flex items-center gap-sm">
+            <span id="courtIconTitle"></span>
+            <span id="courtName">Đang tải...</span>
+          </h1>
+          <div class="court-meta-large text-secondary">
+            <span class="flex items-center gap-xs"><span class="text-tertiary">📍</span> <span id="courtAddress">...</span></span>
+            <span class="separator">•</span>
+            <span class="rating flex items-center">
+              <span id="courtRatingStars"></span>
+              <span class="rating-value" id="courtRatingVal">...</span>
+              <span class="ml-xs">(<span id="courtReviewCount">...</span> đánh giá)</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+
+    </div>
+
+    <!-- Interactive Map Section -->
+    <div class="container mb-xl">
+      <section class="map-section card-glass fade-in-up" id="mapSection">
+        <div class="map-header">
+          <h3 class="flex items-center gap-sm"><span class="text-xl">🗺️</span> Vị trí trên bản đồ</h3>
+          <p class="text-sm text-secondary">Click vào các ghim để xem thông tin sân</p>
+        </div>
+        <div id="leafletMap" style="width:100%; height:500px; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border-default);"></div>
+        <div class="map-court-info hidden" id="mapCourtInfo">
+          <!-- Court popup info rendered by JS -->
+        </div>
+      </section>
+    </div>
+
+    <div class="container pb-2xl">
+      <div class="booking-layout">
+        <!-- Main Content -->
+        <div class="booking-content">
+          <!-- Court Description & Info -->
+          <section class="card-glass p-xl mb-xl fade-in-up">
+            <h3 class="mb-md">Giới thiệu sân</h3>
+            <p class="text-secondary mb-lg" id="courtDescription">...</p>
+            
+            <div class="info-grid grid-3 gap-md mb-lg p-md bg-card rounded-lg border border-subtle">
+              <div>
+                <div class="text-xs text-tertiary uppercase mb-xs">Giờ mở cửa</div>
+                <div class="font-medium" id="courtHours">...</div>
+              </div>
+              <div>
+                <div class="text-xs text-tertiary uppercase mb-xs">Số lượng sân</div>
+                <div class="font-medium" id="courtFields">...</div>
+              </div>
+              <div>
+                <div class="text-xs text-tertiary uppercase mb-xs">Loại sân</div>
+                <div class="font-medium" id="courtType">...</div>
+              </div>
+            </div>
+
+            <h4 class="mb-sm text-lg">Tiện ích</h4>
+            <div class="facilities-list flex flex-wrap gap-sm" id="courtFacilities">
+              <!-- Facilities injected by JS -->
+            </div>
+          </section>
+
+          <!-- Date Picker -->
+          <section class="mb-xl fade-in-up">
+            <h3 class="mb-md flex items-center gap-sm"><span class="text-xl">📅</span> Chọn ngày</h3>
+            <div class="calendar-picker-wrapper">
+              <input type="text" id="calendarPicker" class="form-input calendar-input" placeholder="Chọn ngày đặt sân..." readonly>
+              <span class="calendar-icon">🗓️</span>
+            </div>
+          </section>
+
+          <!-- Time Slots -->
+          <section class="mb-xl fade-in-up">
+            <div class="flex justify-between items-center mb-md">
+              <h3 class="flex items-center gap-sm"><span class="text-xl">⏰</span> Chọn khung giờ</h3>
+              <div class="time-legend flex gap-md text-sm">
+                <span class="flex items-center gap-xs"><span class="legend-dot available"></span> Trống</span>
+                <span class="flex items-center gap-xs"><span class="legend-dot booked"></span> Kín</span>
+                <span class="flex items-center gap-xs"><span class="legend-dot selected"></span> Đang chọn</span>
+              </div>
+            </div>
+            <div class="matrix-wrapper" id="matrixWrapper">
+              <div class="matrix-container" id="timeMatrix">
+                <!-- Matrix generated by JS -->
+              </div>
+            </div>
+          </section>
+
+          <!-- Reviews -->
+          <section class="fade-in-up">
+            <h3 class="mb-md flex items-center gap-sm"><span class="text-xl">⭐</span> Đánh giá từ người chơi</h3>
+            <div class="reviews-list" id="reviewsList">
+              <!-- Reviews injected by JS -->
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar / Booking Summary -->
+        <aside class="booking-sidebar fade-in-left">
+          <div class="summary-card card-glass sticky-top">
+            <h3 class="border-b border-subtle pb-md mb-md">Thông tin đặt sân</h3>
+            
+            <div class="summary-item">
+              <span class="text-secondary">Ngày:</span>
+              <strong id="summaryDate" class="text-right text-primary">Chưa chọn</strong>
+            </div>
+            
+            <div class="summary-item">
+              <span class="text-secondary">Giờ:</span>
+              <strong id="summaryTime" class="text-right">Chưa chọn</strong>
+            </div>
+            
+            <div class="summary-item">
+              <span class="text-secondary">Đơn giá:</span>
+              <span id="summaryPrice" class="text-right">0đ/h</span>
+            </div>
+
+            <div class="divider"></div>
+            
+            <!-- People count -->
+            <div class="form-group mb-md">
+              <label class="form-label flex justify-between">
+                <span>Số người chơi dự kiến</span>
+              </label>
+              <div class="number-input">
+                <button type="button" class="num-btn" id="btnMinus" onclick="updatePeople(-1)">-</button>
+                <input type="number" id="peopleCount" value="10" min="2" max="22" readonly class="num-val">
+                <button type="button" class="num-btn" id="btnPlus" onclick="updatePeople(1)">+</button>
+              </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-group mb-lg">
+              <label class="form-label">Phương thức thanh toán</label>
+              <div class="payment-methods">
+                <label class="payment-label">
+                  <input type="radio" name="payment" value="vnpay" checked>
+                  <div class="payment-card">
+                    <span class="payment-icon text-blue-500">💳</span> VNPay
+                  </div>
+                </label>
+                <label class="payment-label">
+                  <input type="radio" name="payment" value="momo">
+                  <div class="payment-card">
+                    <span class="payment-icon" style="color: #A50064">👛</span> MoMo
+                  </div>
+                </label>
+                <label class="payment-label">
+                  <input type="radio" name="payment" value="cash">
+                  <div class="payment-card">
+                    <span class="payment-icon text-green-500">💵</span> Tiền mặt tại sân
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="summary-total border-t border-subtle pt-md mb-xl flex justify-between items-center">
+              <span class="text-lg">Tổng cộng</span>
+              <span class="text-2xl font-bold text-primary" id="summaryTotal">0đ</span>
+            </div>
+            
+            <button id="btnBookNow" class="btn btn-primary btn-lg w-full mb-sm text-lg pulse" disabled>
+              Đặt sân ngay
+            </button>
+            <p class="text-center text-xs text-secondary">
+              Miễn phí hủy trước 2 giờ. Vui lòng thanh toán đặt cọc 50% nếu chọn VNPay/MoMo.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Related Courts -->
+      <section class="mt-4xl fade-in-up">
+        <h3 class="mb-lg">Sân tương tự quanh khu vực</h3>
+        <div class="grid-3 gap-lg" id="relatedCourts">
+          <!-- Related courts injected by JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer will be injected here by app.js -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/booking.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('navbar-container').innerHTML = getNavbarHTML('../');
+        document.getElementById('footer-container').innerHTML = getFooterHTML('../');
+        initNavbar();
+        initMobileMenu();
+    });
+  </script>
+</body>
+</html>

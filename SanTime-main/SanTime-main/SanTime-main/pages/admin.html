@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản trị Hệ thống - SanTime</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css"> <!-- Shared admin styles -->
+</head>
+<body>
+  <!-- Navbar will be injected here by app.js -->
+  <div id="navbar-container"></div>
+
+  <main class="admin-page section pt-md">
+    <div class="container">
+      
+      <!-- Header -->
+      <header class="admin-header mb-2xl fade-in-up">
+        <div class="flex justify-between items-center">
+          <div>
+            <div class="badge badge-accent mb-xs">Quản trị Hệ thống</div>
+            <h1 class="text-3xl mb-xs">Tất cả Lượt đặt sân</h1>
+            <p class="text-secondary">Giám sát hoạt động trên toàn hệ thống SanTime.</p>
+          </div>
+          
+          <div class="admin-controls flex gap-md items-center">
+            <input type="text" id="adminSearchInput" class="form-input" placeholder="Tìm tên sân, người đặt..." style="width: 250px;">
+            <button class="btn btn-outline" onclick="loadAllBookings()">Làm mới</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Stats -->
+      <div class="grid-4 gap-lg mb-2xl stagger-children" id="adminStats">
+        <!-- Injected by JS -->
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="admin-content-card card-glass fade-in-up p-0 overflow-hidden">
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Mã đặt</th>
+                <th>Sân & SĐT Chủ</th>
+                <th>Người đặt</th>
+                <th>Thời gian</th>
+                <th>Trạng thái</th>
+                <th class="text-right">Tổng tiền</th>
+              </tr>
+            </thead>
+            <tbody id="adminListTbody">
+              <!-- Data injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer will be injected here by app.js -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('navbar-container').innerHTML = getNavbarHTML('../');
+        document.getElementById('footer-container').innerHTML = getFooterHTML('../');
+        initNavbar();
+        initMobileMenu();
+    });
+  </script>
+</body>
+</html>

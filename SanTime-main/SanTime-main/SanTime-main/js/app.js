@@ -335,10 +335,7 @@ function initChatWidget() {
           <span class="chat-header-title">SanTime AI Assistant</span>
           <span class="ai-badge" style="font-size:10px;background:linear-gradient(135deg,#00E676,#00B0FF);color:#0A0E17;padding:2px 8px;border-radius:12px;font-weight:700;margin-left:6px;">Gemma AI</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <span class="chat-settings-icon" onclick="setGeminiApiKey(event)" title="Cài đặt API Key" style="font-size: 1rem; cursor: pointer;">⚙️</span>
-          <span class="chat-toggle-icon">▲</span>
-        </div>
+        <span class="chat-toggle-icon">▲</span>
       </div>
       <div class="chat-body" id="chatBody">
         <div class="chat-messages" id="chatMessages">
@@ -371,20 +368,6 @@ window.toggleChat = function() {
     toggleIcon.textContent = '▼';
     document.getElementById('chatInput').focus();
     setTimeout(scrollToBottom, 100);
-  }
-};
-
-window.setGeminiApiKey = function(event) {
-  event.stopPropagation();
-  const currentKey = localStorage.getItem('santime_gemini_api_key') || '';
-  const newKey = prompt('Nhập Gemini API Key của bạn để sử dụng AI thông minh hơn. Nếu để trống, hệ thống sẽ tự động chuyển về Bot trả lời mẫu:', currentKey);
-  if (newKey !== null) {
-    localStorage.setItem('santime_gemini_api_key', newKey.trim());
-    if (newKey.trim() !== '') {
-      showToast('Đã lưu API Key thành công!', 'success');
-    } else {
-      showToast('Đã xóa API Key. Hệ thống sẽ sử dụng Bot mẫu.', 'info');
-    }
   }
 };
 
@@ -425,17 +408,13 @@ window.sendChatMessage = async function() {
 };
 
 // ---- Google AI Studio (Gemma 4 31B IT) Integration ----
+const GEMMA_API_KEY = 'API_KEY';
 const GEMMA_MODEL = 'gemma-4-31b-it';
+const GEMMA_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMMA_MODEL}:generateContent?key=${GEMMA_API_KEY}`;
 
 let chatHistory = [];
 
 async function callGemmaAI(userMessage) {
-  const apiKey = localStorage.getItem('santime_gemini_api_key');
-  if (!apiKey || apiKey.trim() === '') {
-    throw new Error('Missing API Key. Fallback to local response.');
-  }
-  const GEMMA_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMMA_MODEL}:generateContent?key=${apiKey}`;
-
   // Build context-aware system prompt
   const systemPrompt = `Bạn là SanTime AI Assistant — trợ lý thông minh của nền tảng SanTime, chuyên về đặt sân thể thao và ghép đội tại Việt Nam (tập trung Hà Nội).
 

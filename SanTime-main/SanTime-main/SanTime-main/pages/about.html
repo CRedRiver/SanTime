@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Về Chúng Tôi - SanTime</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+  <!-- Navbar will be injected here by app.js -->
+  <div id="navbar-container"></div>
+
+  <main class="about-page">
+    <!-- Hero Section -->
+    <header class="page-header section text-center">
+      <div class="container fade-in-up">
+        <h1 class="mb-sm text-gradient">Về SanTime</h1>
+        <p class="text-xl text-secondary mb-lg max-w-2xl mx-auto">Câu chuyện khởi nghiệp từ những sinh viên đam mê thể thao tại Đại học Bách Khoa Hà Nội.</p>
+      </div>
+    </header>
+
+    <div class="container pb-4xl">
+      
+      <!-- Story Section -->
+      <section class="mb-4xl fade-in-up">
+        <div class="grid-2 gap-2xl items-center">
+          <div>
+            <h2 class="text-3xl mb-md flex items-center gap-sm">
+              <span class="text-primary">💡</span> Câu chuyện của chúng tôi
+            </h2>
+            <div class="text-secondary text-lg leading-relaxed space-y-md">
+              <p class="mb-md">SanTime ra đời từ một vấn đề đơn giản mà hàng triệu sinh viên và người trẻ Việt Nam đang gặp phải: khó tìm người chơi thể thao cùng và khó đặt sân phù hợp vào giờ cao điểm.</p>
+              <p class="mb-md">Thay vì đăng bài trên các hội nhóm Facebook và chờ đợi hàng giờ trong vô vọng, SanTime cung cấp hệ thống ghép trận thông minh dựa trên trình độ, vị trí và thời gian — giúp bạn tìm đội và đặt sân chỉ trong vài giây.</p>
+              <p>Dự án được phát triển bởi nhóm sinh viên Đại học Bách Khoa Hà Nội trong khuôn khổ học phần Đổi mới sáng tạo và Khởi nghiệp (CH2021), với khát vọng số hóa và nâng tầm phong trào thể thao cộng đồng.</p>
+            </div>
+          </div>
+          
+          <div class="story-illustration relative animate-float">
+            <div class="card-glass p-2xl text-center relative overflow-hidden" style="min-height: 350px; display: flex; align-items: center; justify-content: center; border-color: var(--primary)">
+              <!-- Background gradient mesh -->
+              <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: radial-gradient(circle at center, rgba(0,230,118,0.2) 0%, transparent 70%); z-index:0"></div>
+              
+              <div class="relative z-10 flex flex-col items-center gap-md">
+                <div class="text-6xl mb-sm" style="filter: drop-shadow(0 0 20px var(--primary-glow))">⚡</div>
+                <h3 class="text-2xl font-bold">Chơi ngay,<br>không chờ đợi</h3>
+              </div>
+              
+              <!-- Floating emojis -->
+              <div class="absolute text-3xl" style="top: 20%; left: 15%; animation: float 6s infinite">⚽</div>
+              <div class="absolute text-3xl" style="top: 70%; left: 20%; animation: float 5s infinite 1s">🏸</div>
+              <div class="absolute text-3xl" style="top: 30%; right: 15%; animation: float 7s infinite 0.5s">🏐</div>
+              <div class="absolute text-3xl" style="top: 65%; right: 25%; animation: float 4s infinite 1.5s">🏀</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAM-SAM-SOM Section -->
+      <section class="mb-4xl fade-in-up text-center">
+        <div class="section-header mb-2xl">
+          <h2>Tiềm năng thị trường</h2>
+          <p>Mô hình đánh giá thị trường TAM - SAM - SOM</p>
+        </div>
+        
+        <div class="market-circles-container">
+          <div class="market-circle tam">
+            <span class="market-label">TAM (Total Addressable Market)</span>
+            <span class="market-desc">Toàn quốc - Thể thao phong trào</span>
+            
+            <div class="market-circle sam">
+              <span class="market-label">SAM (Serviceable Available Market)</span>
+              <span class="market-desc">Hà Nội - Sinh viên & người trẻ</span>
+              
+              <div class="market-circle som">
+                <span class="market-label">SOM (Serviceable Obtainable Market)</span>
+                <span class="market-desc">Cụm Bách-Kinh-Xây - MVP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="mb-4xl section pt-0" id="team">
+        <div class="section-header fade-in">
+          <h2>Đội ngũ phát triển</h2>
+          <p>Những người đứng sau nền tảng SanTime</p>
+        </div>
+        
+        <div class="grid-3 gap-lg stagger-children" id="teamGrid">
+          <!-- Team cards injected by JS -->
+        </div>
+      </section>
+
+      <!-- Business Model Canvas -->
+      <section class="mb-4xl fade-in-up">
+        <div class="section-header mb-2xl">
+          <h2>Mô hình kinh doanh</h2>
+          <p>Cách SanTime tạo ra giá trị cho cộng đồng và duy trì hoạt động</p>
+        </div>
+        
+        <div class="bmc-grid">
+          <div class="bmc-cell card-glass">
+            <h4 class="text-primary mb-sm">1. Phân khúc Khách hàng</h4>
+            <ul class="text-sm text-secondary list-disc pl-md space-y-xs">
+              <li>Sinh viên, người đi làm đam mê thể thao</li>
+              <li>Các chủ sân bãi thể thao</li>
+            </ul>
+          </div>
+          
+          <div class="bmc-cell card-glass">
+            <h4 class="text-secondary mb-sm">2. Giải pháp Giá trị</h4>
+            <ul class="text-sm text-secondary list-disc pl-md space-y-xs">
+              <li>Ghép đội nhanh chóng</li>
+              <li>Đặt sân tiện lợi</li>
+              <li>Tìm bạn chơi cùng trình độ</li>
+              <li>Tối ưu tỷ lệ lấp đầy sân</li>
+            </ul>
+          </div>
+          
+          <div class="bmc-cell card-glass">
+            <h4 class="text-accent mb-sm">3. Kênh phân phối</h4>
+            <ul class="text-sm text-secondary list-disc pl-md space-y-xs">
+              <li>Ứng dụng di động (iOS/Android)</li>
+              <li>Mạng xã hội (FB, TikTok, Zalo)</li>
+              <li>Hội sinh viên các trường đại học</li>
+            </ul>
+          </div>
+          
+          <div class="bmc-cell card-glass">
+            <h4 class="text-warning mb-sm">4. Quan hệ Khách hàng</h4>
+            <ul class="text-sm text-secondary list-disc pl-md space-y-xs">
+              <li>Hỗ trợ trực tuyến 24/7</li>
+              <li>Cộng đồng thể thao</li>
+              <li>Hệ thống đánh giá uy tín (Rating)</li>
+            </ul>
+          </div>
+          
+          <div class="bmc-cell card-glass" style="grid-column: span 2;">
+            <h4 class="text-success mb-sm">5. Dòng Doanh thu</h4>
+            <ul class="text-sm text-secondary list-disc pl-md space-y-xs flex gap-xl">
+              <li>Phí hoa hồng từ giao dịch đặt sân</li>
+              <li>Gói hội viên (Premium) cá nhân</li>
+              <li>Quảng cáo từ nhãn hàng thể thao</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roadmap Section -->
+      <section class="mb-4xl section pt-0" id="roadmap">
+        <div class="section-header fade-in">
+          <h2>Lộ trình phát triển</h2>
+          <p>Kế hoạch đưa SanTime đến với mọi người chơi thể thao</p>
+        </div>
+        
+        <div class="roadmap-timeline stagger-children">
+          <div class="rm-item left visible">
+            <div class="rm-content card-glass">
+              <div class="rm-date text-primary font-bold mb-xs">Q2/2026</div>
+              <h4 class="mb-sm">Nghiên cứu & Khảo sát</h4>
+              <p class="text-sm text-secondary">Khảo sát 70+ người dùng, phân tích thị trường TAM-SAM-SOM, xây dựng mô hình kinh doanh.</p>
+            </div>
+          </div>
+          
+          <div class="rm-item right visible">
+            <div class="rm-content card-glass" style="border-color: var(--primary); box-shadow: 0 0 20px var(--primary-glow)">
+              <div class="rm-date text-primary font-bold mb-xs">Q3/2026</div>
+              <h4 class="mb-sm">MVP Development <span class="badge badge-primary text-xs ml-sm">Hiện tại</span></h4>
+              <p class="text-sm text-secondary">Phát triển phiên bản thử nghiệm web nền tảng, test UI/UX và thuật toán ghép trận tại cụm Bách-Kinh-Xây.</p>
+            </div>
+          </div>
+          
+          <div class="rm-item left visible">
+            <div class="rm-content card-glass">
+              <div class="rm-date text-secondary font-bold mb-xs">Q4/2026</div>
+              <h4 class="mb-sm">Beta Launch</h4>
+              <p class="text-sm text-secondary">Ra mắt phiên bản Beta, thu thập phản hồi người dùng thực tế và tinh chỉnh hệ thống rating.</p>
+            </div>
+          </div>
+          
+          <div class="rm-item right visible">
+            <div class="rm-content card-glass">
+              <div class="rm-date text-secondary font-bold mb-xs">Q1/2027</div>
+              <h4 class="mb-sm">Tích hợp Thanh toán</h4>
+              <p class="text-sm text-secondary">Kết nối các cổng thanh toán (VNPay, MoMo), hoàn thiện quy trình đặt cọc và chính sách chống bom kèo.</p>
+            </div>
+          </div>
+          
+          <div class="rm-item left visible">
+            <div class="rm-content card-glass">
+              <div class="rm-date text-accent font-bold mb-xs">Q2/2027</div>
+              <h4 class="mb-sm">Mở rộng Thị trường</h4>
+              <p class="text-sm text-secondary">Mở rộng phủ sóng toàn Hà Nội, ký kết thêm đối tác sân bãi và phát hành Mobile App chính thức.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact/Partner CTA -->
+      <section class="fade-in-up">
+        <div class="card-glass p-3xl text-center border-primary relative overflow-hidden">
+          <div style="position: absolute; bottom:-100px; right:-100px; width:300px; height:300px; background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%); z-index:0"></div>
+          
+          <div class="relative z-10">
+            <h2 class="text-3xl mb-md">Trở thành Đối tác của SanTime</h2>
+            <p class="text-secondary mb-xl max-w-2xl mx-auto">Nếu bạn là chủ sân thể thao hoặc đại diện câu lạc bộ, hãy hợp tác với chúng tôi để tối ưu công suất sân và gia tăng doanh thu.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-md">
+              <button class="btn btn-primary btn-lg pulse">Đăng ký Đối tác</button>
+              <button class="btn btn-outline btn-lg">Liên hệ Tư vấn</button>
+            </div>
+            
+            <div class="mt-lg text-sm text-tertiary flex justify-center gap-lg">
+              <span>📧 contact@santime.vn</span>
+              <span>📞 0123.456.789</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer will be injected here by app.js -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('navbar-container').innerHTML = getNavbarHTML('../');
+        document.getElementById('footer-container').innerHTML = getFooterHTML('../');
+        initNavbar();
+        initMobileMenu();
+        
+        // Render Team
+        if (typeof TEAM_MEMBERS !== 'undefined') {
+            const teamGrid = document.getElementById('teamGrid');
+            teamGrid.innerHTML = TEAM_MEMBERS.map(m => `
+                <div class="card card-glass text-center p-xl hover-glow">
+                    <div class="text-5xl mb-md mx-auto inline-block p-sm bg-tertiary rounded-full border border-subtle" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                        ${m.icon}
+                    </div>
+                    <h3 class="text-lg mb-xs">${m.name}</h3>
+                    <div class="mb-md"><span class="badge badge-primary text-xs">${m.role}</span></div>
+                    <p class="text-sm text-secondary">${m.description}</p>
+                </div>
+            `).join('');
+        }
+    });
+  </script>
+</body>
+</html>
