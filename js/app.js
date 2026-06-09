@@ -333,7 +333,7 @@ function initChatWidget() {
         <div class="chat-header-info">
           <span class="chat-header-icon">🤖</span>
           <span class="chat-header-title">SanTime AI Assistant</span>
-          <span class="ai-badge" style="font-size:10px;background:linear-gradient(135deg,#00E676,#00B0FF);color:#0A0E17;padding:2px 8px;border-radius:12px;font-weight:700;margin-left:6px;">Gemma AI</span>
+          <span class="ai-badge" style="font-size:10px;background:linear-gradient(135deg,#00E676,#00B0FF);color:#0A0E17;padding:2px 8px;border-radius:12px;font-weight:700;margin-left:6px;">Gemini AI</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
           <span class="chat-settings-icon" onclick="setGeminiApiKey(event)" title="Cài đặt API Key" style="font-size: 1rem; cursor: pointer;">⚙️</span>
@@ -346,7 +346,7 @@ function initChatWidget() {
             <div class="chat-message-avatar">🤖</div>
             <div class="chat-message-content">
               <div class="chat-message-sender">SanTime AI</div>
-              <div class="chat-message-text">Xin chào! Mình là trợ lý AI của SanTime, được hỗ trợ bởi Google Gemma. Mình có thể giúp bạn tìm sân, ghép đội, giải đáp thắc mắc hoặc tư vấn về thể thao. Hãy hỏi bất cứ điều gì nhé! 🏸⚽🏀</div>
+              <div class="chat-message-text">Xin chào! Mình là trợ lý AI của SanTime, được hỗ trợ bởi Google Gemini. Mình có thể giúp bạn tìm sân, ghép đội, giải đáp thắc mắc hoặc tư vấn về thể thao. Hãy hỏi bất cứ điều gì nhé! 🏸⚽🏀</div>
             </div>
           </div>
         </div>
@@ -408,7 +408,7 @@ window.sendChatMessage = async function() {
   const typingId = showTypingIndicator();
 
   try {
-    const reply = await callGemmaAI(text);
+    const reply = await callGeminiAI(text);
     removeTypingIndicator(typingId);
     appendMessage('received', 'SanTime AI', reply);
   } catch (error) {
@@ -424,17 +424,17 @@ window.sendChatMessage = async function() {
   input.focus();
 };
 
-// ---- Google AI Studio (Gemma 4 31B IT) Integration ----
-const GEMMA_MODEL = 'gemma-4-31b-it';
+// ---- Google AI Studio (Gemini) Integration ----
+const GEMINI_MODEL = 'gemini-1.5-flash';
 
 let chatHistory = [];
 
-async function callGemmaAI(userMessage) {
+async function callGeminiAI(userMessage) {
   const apiKey = localStorage.getItem('santime_gemini_api_key');
   if (!apiKey || apiKey.trim() === '') {
     throw new Error('Missing API Key. Fallback to local response.');
   }
-  const GEMMA_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMMA_MODEL}:generateContent?key=${apiKey}`;
+  const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
 
   // Build context-aware system prompt
   const systemPrompt = `Bạn là SanTime AI Assistant — trợ lý thông minh của nền tảng SanTime, chuyên về đặt sân thể thao và ghép đội tại Việt Nam (tập trung Hà Nội).
@@ -479,7 +479,7 @@ Hướng dẫn:
     ]
   };
 
-  const response = await fetch(GEMMA_API_URL, {
+  const response = await fetch(GEMINI_API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(requestBody)
@@ -487,7 +487,7 @@ Hướng dẫn:
 
   if (!response.ok) {
     const errorData = await response.json().catch(() => ({}));
-    console.error('Gemma API error:', response.status, errorData);
+    console.error('Gemini API error:', response.status, errorData);
     throw new Error(`API error: ${response.status}`);
   }
 
