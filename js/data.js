@@ -652,27 +652,27 @@ const REVIEWS_DATA = [
 const TEAM_MEMBERS = [
   {
     name: 'Hoàng Bảo Huy',
-    role: 'Tài chính',
-    description: 'Phụ trách tài chính dự án, kiểm soát dòng tiền và phân bổ ngân sách hoạt động.',
-    icon: '💰'
-  },
-  {
-    name: 'Lê Minh Đức',
-    role: 'UI/UX Designer',
-    description: 'Phụ trách thiết kế giao diện và trải nghiệm người dùng cho nền tảng.',
-    icon: '🎨'
-  },
-  {
-    name: 'Nguyễn Trọng Thế Anh',
     role: 'Full-stack Developer',
-    description: 'Kỹ sư phát triển phần mềm, xây dựng kiến trúc hệ thống.',
+    description: 'Kỹ sư phát triển phần mềm (Frontend & Backend Developer), xây dựng kiến trúc hệ thống.',
     icon: '💻'
   },
   {
-    name: 'Vương Toàn Quyền',
+    name: 'Lê Minh Đức',
     role: 'Marketing',
-    description: 'Chuyên viên nghiên cứu thị trường, lập kế hoạch và triển khai chiến dịch Marketing.',
+    description: 'Nghiên cứu thị trường, tham khảo ý kiến, phản hồi của khách hàng với sản phẩm MVP, lập kế hoạch và triển khai các chiến dịch Marketing.',
     icon: '📊'
+  },
+  {
+    name: 'Nguyễn Trọng Thế Anh',
+    role: 'Product Researcher',
+    description: 'Tìm hiểu các đối thủ trên thị trường, nghiên cứu và đưa ra giải pháp giá trị phù hợp với dự án và đối tượng khách hàng chính.',
+    icon: '🔍'
+  },
+  {
+    name: 'Vương Toàn Quyền',
+    role: 'UI Designer & HR',
+    description: 'Phụ trách điều hành nhân sự được thuê, hỗ trợ công việc công nghệ, thiết kế giao diện (UI).',
+    icon: '🎨'
   },
   {
     name: 'Thân Gia Bảo',
@@ -685,7 +685,7 @@ const TEAM_MEMBERS = [
     role: 'Project Manager',
     description: 'Quản lý tiến độ, điều phối công việc chung, định hướng chiến lược kinh doanh.',
     icon: '🎯'
-  },
+  }
 ];
 
 const TESTIMONIALS = [
