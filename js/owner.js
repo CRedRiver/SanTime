@@ -110,11 +110,30 @@ function renderListView(bookings) {
   bookings.sort((a,b) => b.id - a.id);
   
   tbody.innerHTML = bookings.map(b => {
+    const isCompleted = b.status === 'completed';
+    
     // Get player name (for mock data we have player IDs, for local storage we might not)
     let playerName = 'Khách (Vãng lai)';
+    let playersHtml = '';
+    
     if (b.players && b.players.length > 0) {
       const p = PLAYERS_DATA.find(x => x.id === b.players[0]);
       if (p) playerName = p.name;
+      
+      playersHtml = '<div class="avatar-group flex mt-xs">';
+      playersHtml += b.players.slice(0, 4).map(pid => {
+        const pObj = PLAYERS_DATA.find(x => x.id === pid);
+        if (!pObj) return '';
+        const svg = generateAvatarSVG(pObj.name, 24).replace('<svg', '<svg class="avatar" style="width:24px; height:24px"');
+        if (isCompleted) {
+          return `<div class="clickable-player tooltip-wrap" title="Đánh giá ${pObj.name}" onclick="openRatingModal('player', ${pObj.id}, '${pObj.name}', ${b.id}, '${b.date}')">${svg}</div>`;
+        }
+        return `<div class="tooltip-wrap" title="${pObj.name}">${svg}</div>`;
+      }).join('');
+      if (b.players.length > 4) {
+        playersHtml += `<div class="avatar flex items-center justify-center bg-tertiary text-xs" style="width:24px; height:24px">+${b.players.length - 4}</div>`;
+      }
+      playersHtml += '</div>';
     } else if (b.id > 10000) { // Local storage booking
       playerName = 'Nguyễn Văn Minh (Bạn)';
     }
@@ -122,13 +141,18 @@ function renderListView(bookings) {
     return `
     <tr>
       <td><span class="text-tertiary">#</span>${b.code || b.id}</td>
-      <td class="font-medium text-primary">${playerName}</td>
+      <td>
+        <div class="font-medium text-primary">${playerName}</div>
+        ${playersHtml}
+      </td>
       <td>${formatDisplayDate(b.date)}</td>
       <td>${b.timeSlot}</td>
       <td><span class="badge ${getStatusClass(b.status)}">${getStatusText(b.status)}</span></td>
       <td class="text-right font-bold">${formatPrice(b.totalPrice)}</td>
       <td class="text-center">
-        <button class="btn btn-outline btn-sm" onclick="showToast('Tính năng đang phát triển', 'info')">Chi tiết</button>
+        ${isCompleted && b.players && b.players.length > 0 
+          ? `<button class="btn btn-primary btn-sm" onclick="openRatingModal('player', ${b.players[0]}, '${playerName}', ${b.id}, '${b.date}')">Đánh giá khách</button>` 
+          : `<button class="btn btn-outline btn-sm" onclick="showToast('Chi tiết booking', 'info')">Chi tiết</button>`}
       </td>
     </tr>
   `}).join('');
@@ -200,4 +224,40 @@ function formatDisplayDate(dateStr) {
   if (!dateStr) return '';
   const parts = dateStr.split('-');
   return `${parts[2]}/${parts[1]}/${parts[0]}`;
+}
+
+// ---- Rating Modal Logic ----
+let currentRatingTarget = null; // { type, id, bookingId }
+
+function openRatingModal(type, targetId, name, bookingId, date) {
+  currentRatingTarget = { type, id: targetId, bookingId };
+  
+  document.getElementById('ratingModalTitle').textContent = type === 'player' ? 'Đánh giá Người chơi' : 'Đánh giá Sân bãi';
+  document.getElementById('ratingModalAvatar').innerHTML = type === 'player' ? generateAvatarSVG(name, 80) : '<div style="font-size: 40px; text-align: center;">🏟️</div>';
+  document.getElementById('ratingModalName').textContent = name;
+  document.getElementById('ratingModalSubtitle').textContent = 'Khách đặt sân ngày ' + formatDisplayDate(date);
+  
+  // Reset form
+  document.querySelectorAll('input[name="stars"]').forEach(r => r.checked = false);
+  document.getElementById('ratingComment').value = '';
+  
+  document.getElementById('ratingModal').classList.add('open');
+}
+
+function closeRatingModal() {
+  document.getElementById('ratingModal').classList.remove('open');
+  currentRatingTarget = null;
+}
+
+function submitRating() {
+  const checkedStar = document.querySelector('input[name="stars"]:checked');
+  if (!checkedStar) {
+    showToast('Vui lòng chọn số sao!', 'error');
+    return;
+  }
+  const comment = document.getElementById('ratingComment').value.trim();
+  
+  // Here we would normally save to backend. For demo, just show toast and close.
+  showToast('Cảm ơn bạn đã đánh giá khách hàng!', 'success');
+  closeRatingModal();
 }

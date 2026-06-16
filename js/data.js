@@ -551,7 +551,7 @@ const BOOKINGS_DATA = [
     sport: 'football',
     date: '2026-05-28',
     timeSlot: '18:30 - 20:00',
-    status: 'confirmed',
+    status: 'completed',
     players: [1, 5, 7, 9, 3],
     totalPrice: 350000,
     paymentMethod: 'MoMo'
@@ -685,6 +685,25 @@ const TEAM_MEMBERS = [
     role: 'Project Manager',
     description: 'Quản lý tiến độ, điều phối công việc chung, định hướng chiến lược kinh doanh.',
     icon: '🎯'
+  }
+];
+
+const PLAYER_RATINGS_DATA = [
+  {
+    raterId: 3,
+    targetPlayerId: 1,
+    rating: 5,
+    comment: 'Đá rất nhiệt tình, kỹ thuật tốt.',
+    bookingId: 1,
+    date: '2026-05-29'
+  },
+  {
+    raterId: 5,
+    targetPlayerId: 1,
+    rating: 4,
+    comment: 'Thể lực tốt, nhưng hay bỏ vị trí.',
+    bookingId: 1,
+    date: '2026-05-30'
   }
 ];
 

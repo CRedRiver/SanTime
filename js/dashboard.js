@@ -114,21 +114,83 @@ function renderBookingHistory() {
   // Sort descending by ID (simulating date sort)
   const history = [...BOOKINGS_DATA].sort((a,b) => b.id - a.id);
   
-  tbody.innerHTML = history.map(b => `
-    <tr>
-      <td class="court-name">
-        <div class="flex items-center gap-xs">
-          <span>${SPORTS_TYPES[b.sport].icon}</span> ${b.courtName}
-        </div>
-      </td>
-      <td>${formatDisplayDate(b.date)}</td>
-      <td>${b.timeSlot}</td>
-      <td><span class="badge ${getStatusClass(b.status)}">${getStatusText(b.status)}</span></td>
-      <td>${b.paymentMethod}</td>
-      <td class="text-right text-primary font-medium">${formatPrice(b.totalPrice)}</td>
-    </tr>
-  `).join('');
+  tbody.innerHTML = history.map(b => {
+    // Render players
+    const isCompleted = b.status === 'completed';
+    const playersHtml = b.players.slice(0, 5).map(pid => {
+      const p = PLAYERS_DATA.find(x => x.id === pid);
+      if (!p) return '';
+      const svg = generateAvatarSVG(p.name, 32).replace('<svg', '<svg class="avatar avatar-sm"');
+      if (isCompleted && pid !== USER_ID) {
+        return `<div class="clickable-player tooltip-wrap" title="Đánh giá ${p.name}" onclick="openRatingModal('player', ${p.id}, '${p.name}', ${b.id}, '${b.date}')">${svg}</div>`;
+      }
+      return `<div class="tooltip-wrap" title="${p.name}">${svg}</div>`;
+    }).join('');
+    
+    const morePlayers = b.players.length > 5 
+      ? `<div class="avatar avatar-sm flex items-center justify-center bg-tertiary text-xs">+${b.players.length - 5}</div>` 
+      : '';
+
+    const courtAction = isCompleted ? `onclick="openRatingModal('court', ${b.courtId}, '${b.courtName}', ${b.id}, '${b.date}')" class="clickable-player" title="Đánh giá sân"` : '';
+
+    return `
+      <tr>
+        <td class="court-name">
+          <div class="flex items-center gap-xs" ${courtAction}>
+            <span>${SPORTS_TYPES[b.sport].icon}</span> ${b.courtName}
+          </div>
+        </td>
+        <td>${formatDisplayDate(b.date)}</td>
+        <td>${b.timeSlot}</td>
+        <td>
+          <div class="avatar-group flex">
+            ${playersHtml}${morePlayers}
+          </div>
+        </td>
+        <td><span class="badge ${getStatusClass(b.status)}">${getStatusText(b.status)}</span></td>
+        <td>${b.paymentMethod}</td>
+        <td class="text-right text-primary font-medium">${formatPrice(b.totalPrice)}</td>
+      </tr>
+    `;
+  }).join('');
 }
+
+// ---- Rating Modal Logic ----
+let currentRatingTarget = null; // { type, id, bookingId }
+
+function openRatingModal(type, targetId, name, bookingId, date) {
+  currentRatingTarget = { type, id: targetId, bookingId };
+  
+  document.getElementById('ratingModalTitle').textContent = type === 'player' ? 'Đánh giá Người chơi' : 'Đánh giá Sân bãi';
+  document.getElementById('ratingModalAvatar').innerHTML = type === 'player' ? generateAvatarSVG(name, 80) : '<div style="font-size: 40px; text-align: center;">🏟️</div>';
+  document.getElementById('ratingModalName').textContent = name;
+  document.getElementById('ratingModalSubtitle').textContent = 'Trận đấu ngày ' + formatDisplayDate(date);
+  
+  // Reset form
+  document.querySelectorAll('input[name="stars"]').forEach(r => r.checked = false);
+  document.getElementById('ratingComment').value = '';
+  
+  document.getElementById('ratingModal').classList.add('open');
+}
+
+function closeRatingModal() {
+  document.getElementById('ratingModal').classList.remove('open');
+  currentRatingTarget = null;
+}
+
+function submitRating() {
+  const checkedStar = document.querySelector('input[name="stars"]:checked');
+  if (!checkedStar) {
+    showToast('Vui lòng chọn số sao!', 'error');
+    return;
+  }
+  const comment = document.getElementById('ratingComment').value.trim();
+  
+  // Here we would normally save to backend. For demo, just show toast and close.
+  showToast(`Cảm ơn bạn đã đánh giá ${currentRatingTarget.type === 'player' ? 'người chơi' : 'sân'}!`, 'success');
+  closeRatingModal();
+}
+
 
 function renderActivityChart() {
   const container = document.getElementById('activityChart');

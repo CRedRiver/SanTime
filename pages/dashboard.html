@@ -104,6 +104,7 @@
                       <th>Sân</th>
                       <th>Ngày</th>
                       <th>Giờ</th>
+                      <th>Người chơi</th>
                       <th>Trạng thái</th>
                       <th>Thanh toán</th>
                       <th class="text-right">Giá</th>
@@ -220,5 +221,32 @@
         initMobileMenu();
     });
   </script>
+  <!-- Rating Modal -->
+  <div id="ratingModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="text-xl" id="ratingModalTitle">Đánh giá</h3>
+        <button class="modal-close" onclick="closeRatingModal()">×</button>
+      </div>
+      <div class="text-center mb-md">
+        <div id="ratingModalAvatar" class="avatar avatar-lg mx-auto mb-sm"></div>
+        <div id="ratingModalName" class="text-lg font-medium text-primary">Tên người chơi / Sân</div>
+        <div id="ratingModalSubtitle" class="text-sm text-secondary">Trận đấu ngày DD/MM/YYYY</div>
+      </div>
+      
+      <div class="star-rating">
+        <input type="radio" name="stars" id="star5" value="5"><label for="star5">★</label>
+        <input type="radio" name="stars" id="star4" value="4"><label for="star4">★</label>
+        <input type="radio" name="stars" id="star3" value="3"><label for="star3">★</label>
+        <input type="radio" name="stars" id="star2" value="2"><label for="star2">★</label>
+        <input type="radio" name="stars" id="star1" value="1"><label for="star1">★</label>
+      </div>
+      
+      <textarea id="ratingComment" class="form-input w-full mb-lg" rows="3" placeholder="Nhập nhận xét của bạn..."></textarea>
+      
+      <button class="btn btn-primary w-full" onclick="submitRating()">Gửi đánh giá</button>
+    </div>
+  </div>
+
 </body>
 </html>
