@@ -432,7 +432,7 @@ const GEMINI_MODELS = ['gemini-2.5-flash', 'gemini-3.0-flash', 'gemini-1.5-flash
 
 // ĐIỀN API KEY TẠM THỜI VÀO ĐÂY ĐỂ DEMO PUBLIC
 // Lưu ý: Ai cũng có thể xem key này nếu họ check mã nguồn (F12). Chỉ dùng key miễn phí/phụ!
-const PUBLIC_DEMO_KEY = ''; 
+const PUBLIC_DEMO_KEY = 'AQ.Ab8RN6IdxIEgai9-B4jYFFeJcYmZJIgEK3yk83hgXKEzHD32ww'; 
 
 let chatHistory = [];
 
