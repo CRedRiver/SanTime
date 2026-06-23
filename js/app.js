@@ -265,7 +265,10 @@ function getNavbarHTML(basePath = '') {
         ${dashboardLink}
         <a href="${basePath}pages/about.html">Về chúng tôi</a>
       </div>
-      <div class="nav-cta">
+      <div class="nav-cta" style="display: flex; gap: 10px; align-items: center;">
+        <button id="themeToggle" onclick="window.toggleTheme()" class="btn btn-outline btn-sm" style="padding: 0 10px; font-size: 1.2rem; border-color: var(--border-default);">
+          <span id="themeIcon">🌙</span>
+        </button>
         <a href="${basePath}pages/matchmaking.html" class="btn btn-primary btn-sm">Ghép đội ngay</a>
       </div>
       <div class="menu-toggle" id="menu-toggle">
@@ -758,3 +761,35 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(initVietnamMap, 100);
   }
 });
+
+// ---- Theme Management ----
+function initTheme() {
+  const savedTheme = localStorage.getItem('santime_theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  // Default to light if nothing is saved
+  const theme = savedTheme ? savedTheme : 'light';
+  
+  document.documentElement.setAttribute('data-theme', theme);
+  updateThemeIcon(theme);
+}
+
+window.toggleTheme = function() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('santime_theme', newTheme);
+  updateThemeIcon(newTheme);
+};
+
+function updateThemeIcon(theme) {
+  const iconSpan = document.getElementById('themeIcon');
+  if (iconSpan) {
+    iconSpan.textContent = theme === 'light' ? '🌙' : '☀️';
+    iconSpan.title = theme === 'light' ? 'Chế độ tối' : 'Chế độ sáng';
+  }
+}
+
+// Initialize theme immediately to prevent FOUC
+initTheme();
