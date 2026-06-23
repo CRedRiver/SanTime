@@ -430,10 +430,20 @@ window.sendChatMessage = async function() {
 // ---- Google AI Studio (Gemini) Integration ----
 const GEMINI_MODELS = ['gemini-2.5-flash', 'gemini-3.0-flash', 'gemini-1.5-flash'];
 
+// ĐIỀN API KEY TẠM THỜI VÀO ĐÂY ĐỂ DEMO PUBLIC
+// Lưu ý: Ai cũng có thể xem key này nếu họ check mã nguồn (F12). Chỉ dùng key miễn phí/phụ!
+const PUBLIC_DEMO_KEY = ''; 
+
 let chatHistory = [];
 
 async function callGeminiAI(userMessage) {
-  const apiKey = localStorage.getItem('santime_gemini_api_key');
+  let apiKey = localStorage.getItem('santime_gemini_api_key');
+  
+  // Dùng Public Key nếu người dùng chưa tự nhập key cá nhân
+  if (!apiKey || apiKey.trim() === '') {
+    apiKey = PUBLIC_DEMO_KEY;
+  }
+  
   if (!apiKey || apiKey.trim() === '') {
     throw new Error('Missing API Key. Fallback to local response.');
   }
