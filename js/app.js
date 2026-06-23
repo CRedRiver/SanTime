@@ -425,7 +425,7 @@ window.sendChatMessage = async function() {
 };
 
 // ---- Google AI Studio (Gemini) Integration ----
-const GEMINI_MODEL = 'gemini-2.5-flash';
+const GEMINI_MODELS = ['gemini-2.5-flash', 'gemini-3.0-flash', 'gemini-1.5-flash'];
 
 let chatHistory = [];
 
@@ -434,7 +434,6 @@ async function callGeminiAI(userMessage) {
   if (!apiKey || apiKey.trim() === '') {
     throw new Error('Missing API Key. Fallback to local response.');
   }
-  const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
 
   // RAG Data Preparation
   let ragData = '';
@@ -491,24 +490,44 @@ Hướng dẫn:
     ]
   };
 
-  const response = await fetch(GEMINI_API_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(requestBody)
-  });
+  let lastError = null;
 
-  if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}));
-    console.error('Gemini API error:', response.status, errorData);
-    throw new Error(`API error: ${response.status}`);
+  for (const model of GEMINI_MODELS) {
+    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+    
+    try {
+      const response = await fetch(GEMINI_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody)
+      });
+
+      if (!response.ok) {
+        if (response.status === 503 || response.status === 429) {
+          console.warn(`Model ${model} overloaded (${response.status}). Trying fallback...`);
+          lastError = new Error(`API error: ${response.status}`);
+          continue; // Try the next model
+        }
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Gemini API error:', response.status, errorData);
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const aiReply = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Xin lỗi, mình chưa thể trả lời câu hỏi này. Bạn thử hỏi lại nhé!';
+
+      chatHistory.push({ role: 'model', parts: [{ text: aiReply }] });
+
+      return aiReply;
+    } catch (err) {
+      lastError = err;
+      // If it's a network error (e.g. CORS, fetch fail), try the next model just in case
+      console.warn(`Error with ${model}:`, err);
+    }
   }
 
-  const data = await response.json();
-  const aiReply = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Xin lỗi, mình chưa thể trả lời câu hỏi này. Bạn thử hỏi lại nhé!';
-
-  chatHistory.push({ role: 'model', parts: [{ text: aiReply }] });
-
-  return aiReply;
+  // If all models failed, throw the last error
+  throw lastError;
 }
 
 function getLocalFallbackResponse(text) {
