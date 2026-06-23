@@ -436,6 +436,18 @@ async function callGeminiAI(userMessage) {
   }
   const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
 
+  // RAG Data Preparation
+  let ragData = '';
+  if (typeof COURTS_DATA !== 'undefined' && typeof PLAYERS_DATA !== 'undefined') {
+    const fakeCourts = COURTS_DATA.slice(0, 5).map(c => ({
+      name: c.name, sport: c.sport, price: c.price, address: c.address, rating: c.rating
+    }));
+    const fakePlayers = PLAYERS_DATA.slice(0, 5).map(p => ({
+      name: p.name, sport: p.sport, level: p.level, age: p.age, rating: p.rating
+    }));
+    ragData = `\n\n=== HỆ THỐNG RAG (Dữ liệu tham khảo) ===\nDữ liệu Sân bãi (3-5 sân):\n${JSON.stringify(fakeCourts, null, 2)}\n\nDữ liệu Người chơi:\n${JSON.stringify(fakePlayers, null, 2)}\n=========================================\n`;
+  }
+
   // Build context-aware system prompt
   const systemPrompt = `Bạn là SanTime AI Assistant — trợ lý thông minh của nền tảng SanTime, chuyên về đặt sân thể thao và ghép đội tại Việt Nam (tập trung Hà Nội).
 
@@ -451,9 +463,9 @@ Hướng dẫn:
 - Trả lời bằng tiếng Việt, thân thiện, ngắn gọn (tối đa 3-4 câu)
 - Dùng emoji phù hợp 🏸⚽🏀
 - Tư vấn về thể thao, sức khỏe, kỹ thuật chơi
-- Gợi ý tìm sân, ghép đội khi phù hợp
+- Gợi ý tìm sân, ghép đội khi phù hợp bằng cách sử dụng dữ liệu từ HỆ THỐNG RAG bên dưới. Hãy đưa ra thông tin có thật trong RAG khi người dùng hỏi về sân hoặc người chơi cụ thể.
 - Nếu hỏi về giá: sân cầu lông ~100-300k/h, bóng đá ~400-800k/h
-- KHÔNG trả lời các câu hỏi nhạy cảm về chính trị, tôn giáo`;
+- KHÔNG trả lời các câu hỏi nhạy cảm về chính trị, tôn giáo${ragData}`;
 
   chatHistory.push({ role: 'user', parts: [{ text: userMessage }] });
 
